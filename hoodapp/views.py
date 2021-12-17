@@ -34,3 +34,15 @@ def neighbourhoods(request):
         'all_hoods': all_hoods,
     }
     return render(request, 'neighbourhoods.html', params)
+
+def create_neighbourhood(request):
+    if request.method == 'POST':
+        form = HoodForm(request.POST, request.FILES)
+        if form.is_valid():
+            hood = form.save(commit=False)
+            hood.admin = request.user.profile
+            hood.save()
+            return redirect('hood')
+    else:
+        form = HoodForm()
+    return render(request, 'newhood.html', {'form': form})
