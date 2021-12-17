@@ -21,3 +21,16 @@ def edit_profile(request, username):
     else:
         form = ProfileForm()
     return render(request, 'create_profile.html', {'form': form})
+
+
+def profile(request, username):
+    return render(request, 'profile.html')
+
+
+def neighbourhoods(request):
+    all_hoods = Neighbourhood.objects.all()
+    all_hoods = all_hoods[::-1]
+    params = {
+        'all_hoods': all_hoods,
+    }
+    return render(request, 'neighbourhoods.html', params)
