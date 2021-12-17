@@ -9,3 +9,15 @@ from .models import Neighbourhood, Business, Post
 @login_required(login_url='/accounts/login/')
 def index(request):
     return render(request, 'index.html')
+
+
+def edit_profile(request, username):
+    user = User.objects.get(username=username)
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('profile', user.username)
+    else:
+        form = ProfileForm()
+    return render(request, 'create_profile.html', {'form': form})
