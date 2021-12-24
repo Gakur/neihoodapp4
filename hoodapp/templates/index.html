@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="text-center" style="padding-top: 160px;padding-bottom: 176px; color: purple;">
+        <!-- <h1 style="font-size: 70px">Welcome to Our Business Suites</h1> -->
+        <h1>Welcome to Billionare Suites<i class="fas fa-home"></i></h1>
+        <h3 class="">Amazing hidden gem</h3>
+        <h3>The mystery and aura of Billionaire's circle </h3>
+        <a href="{% url 'hood' %}"  class="btn btn-info btn-outline-danger  mt-4">View neighbourhoods</a>
+    </div>
+
+</div>
+<style>
+    body {
+        background-color: #fff;
+        /* background-image: url('https://images.pexels.com/photos/280221/pexels-photo-280221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'); */
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<div class=" bottom-copies text-center" style="background-color: black; height: 10vh;">
+    <p style="color: purple;" class="copy-footer-29">© 2021 Billionaire Suites. All rights reserved | Designed by <a
+            style="color: chartreuse;" href="#">Peter Gakure</a></p>
+</div>
+{% endblock %}
