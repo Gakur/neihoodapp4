@@ -8,6 +8,9 @@ django = "*"
 cloudinary = "*"
 psycopg2 = "*"
 django-registration = "*"
+heroku = "*"
+django-heroku = "*"
+gunicorn = "*"
 
 [dev-packages]
 
